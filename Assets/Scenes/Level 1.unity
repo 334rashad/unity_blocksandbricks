@@ -408,7 +408,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424649132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.77, y: 0.25, z: 0}
+  m_LocalPosition: {x: 7.75, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -660,7 +660,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 18, y: 1}
+  m_Size: {x: 24, y: 1}
   m_EdgeRadius: 0
 --- !u!4 &941708124
 Transform:
@@ -1233,9 +1233,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.006081477, y: 0.012162626}
+  m_Offset: {x: 0.0064122677, y: 0.011066169}
   serializedVersion: 2
-  m_Radius: 0.20725209
+  m_Radius: 0.20628777
 --- !u!50 &2123431194
 Rigidbody2D:
   serializedVersion: 4
@@ -1269,3 +1269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b69620bb7d728d4fb1fade4258b2631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paddle1: {fileID: 424649136}
+  paddlePosition: {x: 0, y: 0}
+  velocityX: 2
+  velocityY: 15
