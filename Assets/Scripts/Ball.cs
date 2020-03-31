@@ -43,7 +43,7 @@ public class Ball : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(velocityX, velocityY);
             hasStarted = true;
-        } 
+        }
     }
 
     private void LockBallToPaddle()
@@ -54,7 +54,11 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        clip = ballSounds[UnityEngine.Random.Range(0, ballSounds.Length)];
-        if (hasStarted) myaudioSource.PlayOneShot(clip);
+        if (ballSounds.Length > 0)
+        {
+            clip = ballSounds[UnityEngine.Random.Range(0, ballSounds.Length)];
+            if (hasStarted) myaudioSource.PlayOneShot(clip);
+        }
+        
     }
 }

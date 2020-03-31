@@ -7682,6 +7682,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 871354207902189774, guid: 64072522fbe1c414e9cff9ecd6718eb4,
+        type: 3}
+      propertyPath: m_UsedByComposite
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 871354208218407009, guid: 64072522fbe1c414e9cff9ecd6718eb4,
+        type: 3}
+      propertyPath: m_UsedByComposite
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 871354208218407009, guid: 64072522fbe1c414e9cff9ecd6718eb4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 871354209297960782, guid: 64072522fbe1c414e9cff9ecd6718eb4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7963,6 +7978,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2127818103, guid: c1c3e328a3d8f9e48bbbfbeb61e863f2, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8079061386394536360, guid: c1c3e328a3d8f9e48bbbfbeb61e863f2,
         type: 3}
       propertyPath: m_LocalPosition.x
