@@ -23,6 +23,7 @@ public class Block : MonoBehaviour
     private void DestroyAllBlocks()
     {
         AudioSource.PlayClipAtPoint(destroySound, Camera.main.transform.position);
+        FindObjectOfType<GameStatus>().IncrementScore();
         Destroy(gameObject, .1f);
         level.DestroyBlocks();
     }
