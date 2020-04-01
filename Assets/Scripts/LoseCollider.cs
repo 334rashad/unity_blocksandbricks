@@ -10,6 +10,7 @@ public class LoseCollider : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         AudioSource.PlayClipAtPoint(destroySound, Camera.main.transform.position);
+        FindObjectOfType<SceneLoader>().LoadStartScene();
         
         SceneManager.LoadScene("Start Menu");
     }
