@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Walls : MonoBehaviour
 {
-
+    //params
     bool hasStarted = false;
 
     void Update()
