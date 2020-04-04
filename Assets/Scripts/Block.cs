@@ -8,7 +8,6 @@ public class Block : MonoBehaviour
     //config parameters
     [SerializeField] AudioClip destroySound;
     [SerializeField] GameObject destroySparklesVFX;
-    [SerializeField] int maxHits;
     [SerializeField] Sprite[] damageLevel;
 
 
@@ -45,6 +44,8 @@ public class Block : MonoBehaviour
     private void HanldeHit()
     {
         timesHit++;
+        int maxHits = damageLevel.Length + 1;
+
         if (timesHit >= maxHits)
         {
             DestroyAllBlocks();
@@ -57,7 +58,13 @@ public class Block : MonoBehaviour
     private void ShowNextDamageLevel()
     {
         int spriteIndex = timesHit - 1;
-        GetComponent<SpriteRenderer>().sprite = damageLevel[spriteIndex];
+        if (damageLevel[spriteIndex] != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = damageLevel[spriteIndex];
+        }else
+        {
+            Debug.LogError("Block sprite is missing from array, " + gameObject.name);
+        }
     }
 
     private void DestroyAllBlocks()
