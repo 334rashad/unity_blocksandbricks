@@ -57,14 +57,13 @@ public class Ball : MonoBehaviour
     {
         Vector2 velocityTweak = new Vector2
             (Random.Range(0f, ballBounceAngle), 
-            Random.Range(0, ballBounceAngle));
+            Random.Range(0f, ballBounceAngle));
 
         if (ballSounds.Length > 0)
         {
             clip = ballSounds[UnityEngine.Random.Range(0, ballSounds.Length)];
             if (hasStarted) myaudioSource.PlayOneShot(clip);
-            myRigidbody2D.velocity += velocityTweak;
         }
-        
+        myRigidbody2D.velocity += velocityTweak;
     }
 }
