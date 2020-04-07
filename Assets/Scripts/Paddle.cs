@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Paddle : MonoBehaviour
-{ 
+{
     //configuration parameters
     [SerializeField] float screenWidthInUnits = 16f;
     [SerializeField] float minX = 1f;
@@ -14,10 +14,16 @@ public class Paddle : MonoBehaviour
 
     AudioSource myaudioSource;
 
+    //cached references
+    GameSession gameSession;
+    Ball gameBall;
+
     // Start is called before the first frame update
     void Start()
     {
         myaudioSource = GetComponent<AudioSource>();
+        gameSession = FindObjectOfType<GameSession>();
+        gameBall = FindObjectOfType<Ball>();
     }
 
     // Update is called once per frame
@@ -27,11 +33,21 @@ public class Paddle : MonoBehaviour
         {
             StartTheGame();
         }
-        mouseXPos = Input.mousePosition.x / Screen.width * screenWidthInUnits;
         Vector2 paddlePosition = new Vector2(transform.position.x, transform.position.y);
-        paddlePosition.x = Mathf.Clamp(mouseXPos, minX, maxX);
+        paddlePosition.x = Mathf.Clamp(GetXPos(), minX, maxX);
         transform.position = paddlePosition;
-        
+
+    }
+
+    private float GetXPos()
+    {
+        if (gameSession.IsAutoPlayEnabled())
+        {
+            return gameBall.transform.position.x;
+        }else
+        {
+            return Input.mousePosition.x / Screen.width * screenWidthInUnits;
+        }
     }
 
     private void StartTheGame()
@@ -47,4 +63,6 @@ public class Paddle : MonoBehaviour
     {
         if (hasStarted) myaudioSource.PlayOneShot(paddleSound);
     }
+
+
 }
